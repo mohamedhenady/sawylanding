@@ -7,9 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('tagline').textContent = CONFIG.tagline;
     document.getElementById('about-text').textContent = CONFIG.aboutText;
 
-    // Set Background if specified
-    if (CONFIG.theme.backgroundImg) {
-        document.body.style.backgroundImage = `url('${CONFIG.theme.backgroundImg}')`;
+    // Initialize Vanta 3D Background
+    if (typeof VANTA !== 'undefined') {
+        VANTA.NET({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x00d2ff,
+            backgroundColor: 0x0b0f1a,
+            points: 12.00,
+            maxDistance: 24.00,
+            spacing: 16.00
+        });
     }
 
     // Inject Links

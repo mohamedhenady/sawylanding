@@ -2,7 +2,7 @@ const CONFIG = {
     siteName: "Elsawy Pharmacy",
     tagline: "Your Health, Our Priority",
     aboutText: "Leading pharmacy providing comprehensive healthcare solutions and premium service to our community.",
-    
+
     // Social Links & Action Buttons
     links: [
         {
@@ -36,12 +36,11 @@ const CONFIG = {
             color: "#FF9500"
         }
     ],
-    
+
     // UI Personalization
     theme: {
         primaryColor: "#0a84ff",
-        accentColor: "#5e5ce6",
-        backgroundImg: "./assets/bg.jpg"
+        accentColor: "#5e5ce6"
     }
 };
 
