@@ -36,7 +36,7 @@ const CONFIG = {
             url: "#",
             icon: "fas fa-globe",
             color: "#00d2ff",
-            status: "Coming Soon",
+            status: "قريبا",
             thumbnail: "./website_thumbnail.png",
             type: "main"
         },
