@@ -39,41 +39,74 @@ body {
 }
 
 .logo-container {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .site-logo {
-    max-width: 120px;
+    max-width: 140px;
     height: auto;
-    filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.3));
-    animation: pulse 4s infinite ease-in-out;
+    border-radius: 50%;
+    /* Assuming circular logo, adjusts if needed */
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    animation: glow-pulse 3s infinite ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes pulse {
+@keyframes glow-pulse {
 
     0%,
     100% {
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
         transform: scale(1);
-        filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.3));
     }
 
     50% {
-        transform: scale(1.05);
-        filter: drop-shadow(0 0 25px rgba(0, 210, 255, 0.5));
+        box-shadow: 0 0 40px rgba(0, 210, 255, 0.8), 0 0 60px rgba(0, 210, 255, 0.3);
+        transform: scale(1.02);
     }
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
 }
 
 .container {
     width: 100%;
     max-width: 1100px;
-    /* Wider for dual layout */
     padding: 2rem;
     text-align: center;
     animation: fadeIn 0.8s ease-out;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .main-content {
@@ -96,20 +129,22 @@ body {
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
     align-items: center;
     text-decoration: none;
     color: var(--text-color);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
 }
 
 .link-card:hover {
-    transform: perspective(1000px) rotateX(5deg) scale(1.03);
+    transform: perspective(1000px) rotateX(2deg) scale(1.02);
     background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 210, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 .link-icon {
@@ -122,11 +157,28 @@ body {
     align-items: center;
     font-size: 1.5rem;
     margin-right: 1.25rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.thumbnail-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-right: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.thumbnail-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .link-info {
     text-align: left;
+    flex: 1;
 }
 
 .link-name {
@@ -135,13 +187,18 @@ body {
     display: block;
 }
 
-.link-url-placeholder {
-    font-size: 0.85rem;
-    opacity: 0.6;
+.link-status {
+    font-size: 0.75rem;
+    background: #5e5ce6;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 .map-container {
-    flex: 1.2;
+    flex: 1;
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -149,13 +206,7 @@ body {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    height: 450px;
-}
-
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    opacity: 0.9;
+    height: 500px;
 }
 
 header {
@@ -164,48 +215,48 @@ header {
 
 h1 {
     font-family: 'Inter', sans-serif;
-    /* Cleaner for bilingual */
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, #00d2ff 100%);
+    background: linear-gradient(135deg, #fff 30%, #00d2ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .tagline {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    color: var(--medical-blue);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #00d2ff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .about-section {
     margin-top: 3rem;
-    padding: 1.5rem;
+    padding: 2rem;
     background: var(--glass-bg);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     border: 1px solid var(--glass-border);
     direction: rtl;
-    /* Pharmacy address is Arabic */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+.contact-text-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.contact-text-footer p {
+    margin-bottom: 0.5rem;
 }
 
 @media (max-width: 900px) {
@@ -214,31 +265,39 @@ h1 {
     }
 
     .container {
-        max-width: 500px;
+        max-width: 600px;
+    }
+
+    .map-container {
+        height: 400px;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 1.25rem;
+        padding: 1rem;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .link-card {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
-    .link-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 1.3rem;
-        margin-right: 1rem;
+    .thumbnail-box {
+        width: 60px;
+        height: 60px;
     }
 
-    .map-container {
-        height: 300px;
+    .social-container {
+        gap: 1rem;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
