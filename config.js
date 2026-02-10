@@ -1,5 +1,6 @@
 const CONFIG = {
-    siteName: "صيدلية الصاوي - Elsawy Pharmacy",
+    siteNameAr: "صيدلية الصاوي",
+    siteNameEn: "Elsawy Pharmacy",
     logoPath: "./sawylogo.png",
     tagline: '"علمنا، دوائنا، صحتك"',
     aboutText: "212 عمارات الضباط - امتداد رمسيس 2 - مدينة نصر، القاهرة.",
@@ -40,7 +41,7 @@ const CONFIG = {
             type: "main"
         },
         {
-            name: "عروض المجلة - Offers",
+            name: "مجلة العروض - Offers",
             url: "https://sawy-pharmacy-app.netlify.app/",
             icon: "fas fa-book-open",
             color: "#FF9500",

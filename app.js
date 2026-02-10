@@ -2,8 +2,11 @@ import CONFIG from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Inject Site Info
-    document.title = CONFIG.siteName;
-    document.getElementById('site-name').textContent = CONFIG.siteName;
+    document.title = `${CONFIG.siteNameAr} | ${CONFIG.siteNameEn}`;
+
+    document.getElementById('site-name-ar').textContent = CONFIG.siteNameAr;
+    document.getElementById('site-name-en').textContent = CONFIG.siteNameEn;
+
     document.getElementById('tagline').textContent = CONFIG.tagline;
     document.getElementById('about-text').textContent = CONFIG.aboutText;
 
@@ -17,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject Logo
     if (CONFIG.logoPath) {
         const logoContainer = document.getElementById('logo-container');
-        logoContainer.innerHTML = `<img src="${CONFIG.logoPath}" alt="${CONFIG.siteName}" class="site-logo">`;
+        logoContainer.innerHTML = `<img src="${CONFIG.logoPath}" alt="${CONFIG.siteNameEn}" class="site-logo">`;
     }
 
-    // Initialize Vanta 3D Background - Pharmacy Related Theme
+    // Initialize Vanta 3D Background - Darker & Deeper Pharmacy Theme
     if (typeof VANTA !== 'undefined') {
         VANTA.CELLS({
             el: "body",
@@ -29,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
             gyroControls: false,
             minHeight: 200.00,
             minWidth: 200.00,
-            scale: 1.00,
-            color1: 0x00d2ff,
-            color2: 0x0a192f, // Deeper medical blue-black
-            size: 2.50,
-            speed: 0.80
+            scale: 0.80, // More zoomed in for depth
+            color1: 0x00a8cc, // Slightly more vibrant medical blue
+            color2: 0x020a1a, // Near black for deep contrast
+            size: 3.50, // Larger cells
+            speed: 0.60  // Slower, calmer movement
         });
     }
 
@@ -48,8 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const socialElement = document.createElement('a');
             socialElement.href = link.url;
             socialElement.target = "_blank";
-            socialElement.className = 'social-icon';
+            socialElement.className = 'social-card';
             socialElement.style.color = link.color;
+            socialElement.style.animationDelay = `${index * 0.1}s`;
             socialElement.innerHTML = `<i class="${link.icon}"></i>`;
             socialContainer.appendChild(socialElement);
         } else {
@@ -57,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             linkElement.href = link.url;
             linkElement.target = "_blank";
             linkElement.className = 'link-card';
-            linkElement.style.animationDelay = `${index * 0.1}s`;
+            linkElement.style.animationDelay = `${index * 0.15}s`;
 
             let linkInnerContent = '';
 
