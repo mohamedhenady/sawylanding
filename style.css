@@ -68,37 +68,23 @@ body {
 
 .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 1100px;
+    /* Wider for dual layout */
     padding: 2rem;
     text-align: center;
     animation: fadeIn 0.8s ease-out;
+    margin: 0 auto;
 }
 
-header {
-    margin-bottom: 2.5rem;
-}
-
-h1 {
-    font-family: 'Inter', sans-serif;
-    /* Cleaner for bilingual */
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, #00d2ff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.tagline {
-    font-size: 1.2rem;
+.main-content {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
     margin-bottom: 2rem;
-    font-weight: 500;
-    color: var(--medical-blue);
 }
 
 .links-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -154,6 +140,48 @@ h1 {
     opacity: 0.6;
 }
 
+.map-container {
+    flex: 1.2;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 450px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+
+header {
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+    /* Cleaner for bilingual */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #fff 0%, #00d2ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: var(--medical-blue);
+}
+
 .about-section {
     margin-top: 3rem;
     padding: 1.5rem;
@@ -180,6 +208,16 @@ h1 {
     }
 }
 
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 1.25rem;
@@ -198,5 +236,9 @@ h1 {
         height: 42px;
         font-size: 1.3rem;
         margin-right: 1rem;
+    }
+
+    .map-container {
+        height: 300px;
     }
 }

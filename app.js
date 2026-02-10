@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Vanta 3D Background
     if (typeof VANTA !== 'undefined') {
-        VANTA.NET({
+        VANTA.CELLS({
             el: "body",
             mouseControls: true,
             touchControls: true,
@@ -23,13 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x00d2ff,
-            backgroundColor: 0x07090f, // Darker for more contrast
-            points: 15.00, // More points for a "molecular" look
-            maxDistance: 20.00,
-            spacing: 15.00,
-            showDots: true // Added dots for a scientific feel
+            color1: 0x00d2ff,
+            color2: 0x07090f,
+            size: 1.50,
+            speed: 1.00
         });
     }
 
