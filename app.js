@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('tagline').textContent = CONFIG.tagline;
     document.getElementById('about-text').textContent = CONFIG.aboutText;
 
+    // Inject Logo
+    if (CONFIG.logoPath) {
+        const logoContainer = document.getElementById('logo-container');
+        logoContainer.innerHTML = `<img src="${CONFIG.logoPath}" alt="${CONFIG.siteName}" class="site-logo">`;
+    }
+
     // Initialize Vanta 3D Background
     if (typeof VANTA !== 'undefined') {
         VANTA.NET({
@@ -19,10 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x00d2ff,
-            backgroundColor: 0x0b0f1a,
-            points: 12.00,
-            maxDistance: 24.00,
-            spacing: 16.00
+            backgroundColor: 0x07090f, // Darker for more contrast
+            points: 15.00, // More points for a "molecular" look
+            maxDistance: 20.00,
+            spacing: 15.00,
+            showDots: true // Added dots for a scientific feel
         });
     }
 

@@ -1,39 +1,40 @@
 const CONFIG = {
-    siteName: "Elsawy Pharmacy",
-    tagline: "Your Health, Our Priority",
-    aboutText: "Leading pharmacy providing comprehensive healthcare solutions and premium service to our community.",
+    siteName: "صيدلية الصاوي - Elsawy Pharmacy",
+    logoPath: "./sawylogo.png",
+    tagline: '"علمنا، دواؤنا، صحتك"',
+    aboutText: "212 عمارات الضباط - امتداد رمسيس 2 - مدينة نصر، القاهرة.",
 
     // Social Links & Action Buttons
     links: [
         {
-            name: "WhatsApp",
-            url: "https://wa.me/yournumber",
+            name: "الواتساب - WhatsApp",
+            url: "https://wa.me/201024697326",
             icon: "fab fa-whatsapp",
             color: "#25D366"
         },
         {
-            name: "Facebook",
-            url: "https://facebook.com/elsawypharmacy",
+            name: "فيسبوك - Facebook",
+            url: "https://www.facebook.com/share/1JjTzf4dz6/",
             icon: "fab fa-facebook-f",
             color: "#1877F2"
         },
         {
-            name: "Instagram",
-            url: "https://instagram.com/elsawypharmacy",
+            name: "إنستجرام - Instagram",
+            url: "https://www.instagram.com/elsawypharmacy?igsh=MWN1ZHVyYW8xNm8yNA==",
             icon: "fab fa-instagram",
             color: "#E4405F"
         },
         {
-            name: "Official Website",
-            url: "https://elsawypharmacy.com",
-            icon: "fas fa-globe",
-            color: "#007AFF"
-        },
-        {
-            name: "Our Magazine",
-            url: "#",
+            name: "عروض المجلة - Offers",
+            url: "https://sawy-pharmacy-app.netlify.app/",
             icon: "fas fa-book-open",
             color: "#FF9500"
+        },
+        {
+            name: "اتصل بنا - Call Us",
+            url: "tel:0220812392",
+            icon: "fas fa-phone",
+            color: "#007AFF"
         }
     ],
 
