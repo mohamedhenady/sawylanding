@@ -2,7 +2,7 @@ const CONFIG = {
     siteNameAr: "صيدلية الصاوي",
     siteNameEn: "Elsawy Pharmacy",
     logoPath: "./sawylogo.png",
-    tagline: '"علمنا، دوائنا، صحتك"',
+    tagline: 'علمنا، دوائنا، صحتك',
     aboutText: "212 عمارات الضباط - امتداد رمسيس 2 - مدينة نصر، القاهرة.",
     phone: "0220812392",
     whatsapp: "01024697326",
